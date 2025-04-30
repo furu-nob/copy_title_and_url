@@ -3,12 +3,15 @@
   "name": "Copy Title and URL",
   "version": "1.0",
   "description": "Copy page title and URL in selected format",
-  "permissions": ["activeTab", "storage", "clipboardWrite",  "scripting"],
+  "permissions": ["activeTab", "storage", "clipboardWrite",  "scripting", "notifications"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js"
   },
+  
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "favicon_2.png",
       "32": "favicon_2.png",
