@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>コピー形式設定</title>
+</head>
+<body>
+  <h2>コピー形式を選択してください</h2>
+  <form id="form">
+    <label>
+      <input type="radio" name="format" value="markdown" />
+      Markdown記法（[{title}]({url})）
+    </label><br />
+    <label>
+      <input type="radio" name="format" value="textile" />
+      Textile記法（"{title}":{url}）
+    </label><br />
+    <label>
+      <input type="radio" name="format" value="custom" />
+      カスタム形式：{title}, {url} が使えます
+      <input type="text" id="customFormat" placeholder="例: 【{title}】→ {url}" style="width: 300px;" />
+    </label><br /><br />
+    <button type="submit">保存</button>
+  </form>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Title and URL",
+  "version": "1.0",
+  "description": "Copy page title and URL in selected format",
+  "permissions": ["activeTab", "storage", "clipboardWrite",  "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "favicon_2.png",
+      "32": "favicon_2.png",
+      "48": "favicon_2.png",
+      "128": "favicon_2.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+      "16": "favicon_2.png",
+    "32": "favicon_2.png",
+    "48": "favicon_2.png",
+    "128": "favicon_2.png"
+  }
+}
