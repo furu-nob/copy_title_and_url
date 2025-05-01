@@ -4,7 +4,7 @@
 Plugin to copy page title and URL in Wiki format.
 
 * Option Example
-  * Markdown <-- default
+  * Markdown <-- default  
   ```（[{title}]({url})）```
   * Textile  
   ```（"{title}":{url}）```
