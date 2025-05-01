@@ -10,3 +10,7 @@ Plugin to copy page title and URL in Wiki format.
   ```（"{title}":{url}）```
   * Custum (You can Write lile bellow.)  
    {title}, {url}
+
+* やりたいこと
+  * notifications にコピーした内容を追加
+  * エラーハンドリング → http https 以外のページではエラーを出したい
