@@ -1,6 +1,17 @@
 chrome.action.onClicked.addListener(async (tab) => {
   if (!tab || !tab.id || !tab.url) return;
 
+  // http/https以外のページは拒否
+  if (!/^https?:\/\//.test(tab.url)) {
+    chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'favicon_2.png',
+      title: 'コピー失敗',
+      message: 'このページのURLはコピーできません。'
+    });
+    return;
+  }
+
   const title = tab.title;
   const url = tab.url;
 
@@ -23,7 +34,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       formattedText = `[[${title}|${url}]]`; // Redmine wiki形式
   }
 
-  // アクティブなページでコピー処理を実行
+  // コピー処理
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     func: async (text) => {
@@ -35,12 +46,13 @@ chrome.action.onClicked.addListener(async (tab) => {
     },
     args: [formattedText]
   });
-  // 通知用に内容を切り詰め（最大100文字）
+
+  // 通知用に切り詰め
   const maxLength = 100;
   const displayText = formattedText.length > maxLength
     ? formattedText.slice(0, maxLength - 1) + '…'
     : formattedText;
-  // 通知表示
+
   chrome.notifications.create({
     type: 'basic',
     iconUrl: 'favicon_2.png',

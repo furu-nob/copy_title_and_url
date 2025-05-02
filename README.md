@@ -14,3 +14,4 @@ Plugin to copy page title and URL in Wiki format.
 * やりたいこと
   * notifications にコピーした内容を追加 →追加した！
   * エラーハンドリング → http https 以外のページではエラーを出したい
+  追加した。-> **拡張機能の管理画面（chrome://extensions/）で「ファイルのURLへのアクセスを許可する」**をONにする必要があります。
