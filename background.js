@@ -35,12 +35,16 @@ chrome.action.onClicked.addListener(async (tab) => {
     },
     args: [formattedText]
   });
-
+  // 通知用に内容を切り詰め（最大100文字）
+  const maxLength = 100;
+  const displayText = formattedText.length > maxLength
+    ? formattedText.slice(0, maxLength - 1) + '…'
+    : formattedText;
   // 通知表示
   chrome.notifications.create({
     type: 'basic',
     iconUrl: 'favicon_2.png',
     title: 'コピー完了',
-    message: 'タイトルとURLをコピーしました。'
+    message: `タイトルとURLをコピーしました:\n${displayText}`
   });
 });

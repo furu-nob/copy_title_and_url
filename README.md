@@ -12,5 +12,5 @@ Plugin to copy page title and URL in Wiki format.
    {title}, {url}
 
 * やりたいこと
-  * notifications にコピーした内容を追加
+  * notifications にコピーした内容を追加 →追加した！
   * エラーハンドリング → http https 以外のページではエラーを出したい
